@@ -1,0 +1,37 @@
+[16-09-24 01:04:49][stdout_logger.py::105][INFO]: {
+    "global": {
+        "debug": true,
+        "cfg_transform": "configs/segmentation/transform.yaml",
+        "save_dir": "static/assets/segmentations",
+        "device": "cuda:0",
+        "weights": "weights/semantic_seg.pth"
+    },
+    "model": {
+        "name": "BaseSegModel",
+        "args": {
+            "name": "unetplusplus",
+            "encoder_name": "efficientnet-b4",
+            "num_classes": 102
+        }
+    },
+    "data": {
+        "dataloader": {
+            "name": "DataLoader",
+            "args": {
+                "batch_size": 1,
+                "drop_last": false,
+                "shuffle": false
+            }
+        }
+    }
+}
+[16-09-24 01:04:49][stdout_logger.py::111][DEBUG]: Loading config from configs/segmentation/transform.yaml...
+[16-09-24 01:06:14][stdout_logger.py::102][WARNING]: Loaded Successfully. Ignoring Error(s) in loading state_dict for BaseSegModel:
+	size mismatch for model.segmentation_head.0.weight: copying a param with shape torch.Size([103, 16, 3, 3]) from checkpoint, the shape in current model is torch.Size([102, 16, 3, 3]).
+	size mismatch for model.segmentation_head.0.bias: copying a param with shape torch.Size([103]) from checkpoint, the shape in current model is torch.Size([102]).
+[16-09-24 01:06:15][stdout_logger.py::105][INFO]: Using CUDA:0 (NVIDIA GeForce RTX 4080 Laptop GPU, 12281.5MB)
+
+[16-09-24 01:06:15][stdout_logger.py::105][INFO]: Number of test sample: 1
+[16-09-24 01:06:15][stdout_logger.py::105][INFO]: Everything will be saved to static/assets/segmentations\2024-09-16_01-04-49
+[16-09-24 01:06:15][stdout_logger.py::105][INFO]: Inferencing...
+[16-09-24 01:06:15][stdout_logger.py::105][INFO]: Save image at static/assets/segmentations\2024-09-16_01-04-49\masks\bd1fa8e932d5d1b38905cf70e40206c0ce856948d4d5c2592bee5590e0a4cc40.jpeg and static/assets/segmentations\2024-09-16_01-04-49\overlays\bd1fa8e932d5d1b38905cf70e40206c0ce856948d4d5c2592bee5590e0a4cc40.jpeg
